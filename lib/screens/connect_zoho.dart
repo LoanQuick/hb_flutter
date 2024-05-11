@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hb_flutter/screens/home.dart';
 import 'package:hb_flutter/services/api_service.dart';
-import 'package:hb_flutter/services/nav_service.dart';
 
 class ConenctZohoScreen extends StatelessWidget {
   const ConenctZohoScreen({super.key});
@@ -26,12 +24,12 @@ class ConenctZohoScreen extends StatelessWidget {
                     context: context);
 
                 print(response.toString());
-                if (context.mounted) {
-                  NavigatorService().navigate(
-                    context,
-                    const HomeScreen(),
-                  );
-                }
+                // if (context.mounted) {
+                //   NavigatorService().navigate(
+                //     context,
+                //     const HomeNav(),
+                //   );
+                // }
               },
               child: const Text(
                 "Connect your Zoho Account",
