@@ -12,12 +12,10 @@ class LoanVendorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
-      future: isLoaded.value
-          ? null
-          : ApiService().apiGet(
-              endpoint: "https://zsk18d91-8000.inc1.devtunnels.ms/loan-vendor",
-              context: context,
-            ),
+      future: ApiService().apiGet(
+        endpoint: "https://zsk18d91-8000.inc1.devtunnels.ms/loan-vendor",
+        context: context,
+      ),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return SizedBox(

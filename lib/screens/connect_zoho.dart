@@ -27,6 +27,7 @@ class ConenctZohoScreen extends StatelessWidget {
                     context: context);
 
                 print(response.toString());
+                await Future.delayed(const Duration(seconds: 2));
                 if (context.mounted) {
                   NavigatorService().navigate(
                     context,

@@ -11,7 +11,13 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.max,
       children: [
+        SizedBox(
+          height: 40,
+        ),
         GaugeWIdget(),
+        SizedBox(
+          height: 40,
+        ),
         Text(
           'Monthly Financial Health',
           textAlign: TextAlign.center,
@@ -27,14 +33,14 @@ class HomeScreen extends StatelessWidget {
         SizedBox(
           height: 20.0,
         ),
-        Text(
-          'Calculate Loan EMI',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        // Text(
+        //   'Calculate Loan EMI',
+        //   textAlign: TextAlign.center,
+        //   style: TextStyle(
+        //     fontSize: 20,
+        //     fontWeight: FontWeight.bold,
+        //   ),
+        // ),
       ],
     );
   }
