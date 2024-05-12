@@ -13,7 +13,7 @@ class LoanVendorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
       future: ApiService().apiGet(
-        endpoint: "https://zsk18d91-8000.inc1.devtunnels.ms/loan-vendor",
+        endpoint: "https://zg97h4jr-8000.inc1.devtunnels.ms/loan-vendor",
         context: context,
       ),
       builder: (context, snapshot) {

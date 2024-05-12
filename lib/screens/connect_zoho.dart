@@ -23,7 +23,7 @@ class ConenctZohoScreen extends StatelessWidget {
               onPressed: () async {
                 var response = await ApiService().apiGetRedirect(
                     endpoint:
-                        "https://accounts.zoho.in/oauth/v2/auth?scope=ZohoBooks.fullaccess.all&client_id=1000.S6S63N32DO2XVGA7BSX5MAJ8RK792N&state=testing&response_type=code&redirect_uri=https://zsk18d91-8000.inc1.devtunnels.ms/zoho/setup&access_type=offline",
+                        "https://accounts.zoho.in/oauth/v2/auth?scope=ZohoBooks.fullaccess.all&client_id=1000.S6S63N32DO2XVGA7BSX5MAJ8RK792N&state=testing&response_type=code&redirect_uri=https://zg97h4jr-8000.inc1.devtunnels.ms/zoho/setup&access_type=offline",
                     context: context);
 
                 print(response.toString());
