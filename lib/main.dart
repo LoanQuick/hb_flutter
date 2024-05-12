@@ -19,9 +19,36 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             fontFamily: GoogleFonts.dmSans().fontFamily,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                shape: MaterialStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      8.0,
+                    ),
+                  ),
+                ),
+                backgroundColor: const MaterialStatePropertyAll(
+                  Colors.orangeAccent,
+                ),
+                foregroundColor: const MaterialStatePropertyAll(
+                  Colors.white,
+                ),
+                padding: const MaterialStatePropertyAll(
+                  EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                  ),
+                ),
+                textStyle: const MaterialStatePropertyAll(
+                  TextStyle(
+                    fontSize: 12.0,
+                  ),
+                ),
+              ),
+            ),
             useMaterial3: true,
           ),
-          home: HomeNav()
+          home: const HomeNav()
           // home: const ConenctZohoScreen(),
           ),
     );

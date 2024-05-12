@@ -49,7 +49,7 @@ class ApiService {
   ///Pass [UserModel] as [user] required for authentication based on app token
   ///
   ///Pass [String] as [endpoint]
-  Future<dynamic> apiGet({
+  Future<dynamic> apiGetRedirect({
     required String endpoint,
     Map<String, dynamic>? queryParameters,
     required BuildContext context,
@@ -59,7 +59,7 @@ class ApiService {
       // _dio.options.headers["Authorization"] = "Bearer $token";
       // log("API GET CALL : ${apiBaseUrl + endpoint}");
 
-      dio.Response rawResponse = await _dio.get(apiBaseUrl + endpoint,
+      dio.Response rawResponse = await _dio.get(endpoint,
           queryParameters: queryParameters,
           options: dio.Options(
             followRedirects: false,
@@ -73,6 +73,32 @@ class ApiService {
       log("raw response ${rawResponse.redirects.length}");
 
       launchUrl(rawResponse.realUri, mode: LaunchMode.externalApplication);
+
+      return rawResponse.data;
+    } on dio.DioException catch (e) {
+      log("getAPI : ${e.toString()} - $endpoint");
+      rethrow;
+    }
+  }
+
+  Future<dynamic> apiGet({
+    required String endpoint,
+    Map<String, dynamic>? queryParameters,
+    required BuildContext context,
+  }) async {
+    try {
+      // String? token = await FirebaseAuth.instance.currentUser!.getIdToken();
+      // _dio.options.headers["Authorization"] = "Bearer $token";
+      // log("API GET CALL : ${apiBaseUrl + endpoint}");
+
+      dio.Response rawResponse = await _dio.get(endpoint,
+          queryParameters: queryParameters,
+          options: dio.Options(
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 300;
+            },
+          ));
 
       return rawResponse.data;
     } on dio.DioException catch (e) {

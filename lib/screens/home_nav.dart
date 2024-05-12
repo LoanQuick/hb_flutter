@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hb_flutter/screens/home.dart';
+import 'package:hb_flutter/screens/vendor.dart';
 import 'package:hb_flutter/screens/wallet.dart';
 import 'package:hb_flutter/services/color.dart';
 
@@ -11,14 +12,29 @@ class HomeNav extends StatefulWidget {
 }
 
 class _HomeNavState extends State<HomeNav> {
+  int _currentIndex = 0;
+
   final List<Widget> allWidgets = [
     const HomeScreen(),
     const WalletScreen(),
+    LoanVendorScreen(),
     Container(),
-    Container(),
+    // Column(
+    //   children: [
+    //     SizedBox(
+    //       height: MediaQuery.of(context).size.height - 150,
+    //       child: Center(
+    //         child: ElevatedButton(
+    //           onPressed: () {},
+    //           child: const Text(
+    //             "Re-sync Zoho Books",
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // ),
   ];
-
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {

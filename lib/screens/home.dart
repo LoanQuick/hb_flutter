@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         GaugeWIdget(),
         Text(
-          'Monthly Financial Health:',
+          'Monthly Financial Health',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -24,6 +24,17 @@ class HomeScreen extends StatelessWidget {
           height: 12.0,
         ),
         StackWidget(data: [50, 100, 150, 200, 250, 120]),
+        SizedBox(
+          height: 20.0,
+        ),
+        Text(
+          'Calculate Loan EMI',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
     );
   }
